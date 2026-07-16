@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Open OCPP Trace">
+  <rect width="120" height="120" rx="26" fill="#0d1117"></rect>
+  <g fill="none" stroke="#33b1d4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M46 24 H26 V96 H46"></path>
+    <path d="M74 24 H94 V96 H74"></path>
+    <path d="M34 60 H48 L54 42 L60 78 L66 60 H86" stroke-width="8"></path>
+  </g>
+</svg>

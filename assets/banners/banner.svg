@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-label="Open OCPP Trace">
+  <rect width="1280" height="400" fill="#0d1117"></rect>
+  <line x1="0" y1="200" x2="1280" y2="200" stroke="#161b22" stroke-width="2"></line>
+  <path d="M120 200 H300 L330 200 L348 150 L372 262 L390 200 H520" fill="none" stroke="#1d3a44" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+  <g transform="translate(150 128) scale(1.2)" fill="none" stroke="#33b1d4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M46 24 H26 V96 H46"></path>
+    <path d="M74 24 H94 V96 H74"></path>
+    <path d="M34 60 H48 L54 42 L60 78 L66 60 H86" stroke-width="8"></path>
+  </g>
+  <text x="320" y="188" font-family="&#39;Space Grotesk&#39;, system-ui, sans-serif" font-size="72" font-weight="500" fill="#e6edf3" letter-spacing="-1">Open <tspan font-family="&#39;JetBrains Mono&#39;, monospace" font-weight="700" fill="#33b1d4">OCPP</tspan> Trace</text>
+  <text x="322" y="238" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="26" fill="#9da7b3" letter-spacing="0.5">An open standard for exchanging and analyzing OCPP traces</text>
+  <text x="322" y="286" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="20" fill="#7d8590" letter-spacing="1">github.com/open-ocpp-trace</text>
+</svg>

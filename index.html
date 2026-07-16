@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open OCPP Trace — an open, vendor-neutral format for OCPP traces</title>
+  <meta name="description" content="Open OCPP Trace is an open, vendor-neutral specification for exchanging, storing, and analyzing OCPP traces, so different OCPP tools can share traces without being tied to any single implementation.">
+
+  <link rel="icon" href="assets/favicons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/favicons/apple-touch-icon-180.png">
+
+  <meta property="og:title" content="Open OCPP Trace">
+  <meta property="og:description" content="An open, vendor-neutral format for exchanging, storing, and analyzing OCPP traces.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/banners/banner.png">
+
+  <style>
+    :root {
+      --accent: #33b1d4;
+      --bg: #0d1117;
+      --panel: #11161d;
+      --border: #222b36;
+      --fg: #e6edf3;
+      --muted: #7d8590;
+      --divider: #161b22;
+      --maxw: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    header { padding: 56px 0 8px; text-align: center; }
+    header img.banner {
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .tagline {
+      margin: 28px auto 0;
+      max-width: 620px;
+      font-size: 1.15rem;
+      color: var(--fg);
+    }
+    .status {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .status b { color: var(--accent); font-weight: 600; }
+
+    .cta { margin: 36px 0 8px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 11px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+    }
+    .btn-primary { background: var(--accent); color: #06222b; border-color: var(--accent); }
+    .btn-primary:hover { text-decoration: none; filter: brightness(1.08); }
+    .btn-ghost { color: var(--fg); background: var(--panel); }
+    .btn-ghost:hover { text-decoration: none; border-color: var(--accent); }
+
+    hr.rule { border: 0; border-top: 1px solid var(--divider); margin: 64px 0; }
+
+    section { margin: 56px 0; }
+    h2 {
+      font-size: 1.35rem;
+      margin: 0 0 16px;
+      letter-spacing: -0.01em;
+    }
+    h2 .mono { font-family: ui-monospace, "JetBrains Mono", monospace; color: var(--accent); }
+    p { margin: 0 0 16px; }
+    .muted { color: var(--muted); }
+
+    ul.clean { list-style: none; padding: 0; margin: 0; }
+    ul.clean li {
+      position: relative;
+      padding: 10px 0 10px 26px;
+      border-bottom: 1px solid var(--divider);
+    }
+    ul.clean li:last-child { border-bottom: 0; }
+    ul.clean li::before {
+      content: "";
+      position: absolute;
+      left: 4px; top: 20px;
+      width: 8px; height: 8px;
+      border-radius: 2px;
+      background: var(--accent);
+    }
+    ul.clean li b { font-weight: 600; }
+
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .card {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .card h3 { margin: 0 0 6px; font-size: 1rem; }
+    .card h3 a::after { content: " ↗"; color: var(--muted); font-size: 0.85em; }
+    .card p { margin: 0; font-size: 0.92rem; color: var(--muted); }
+    .card.soon h3 { color: var(--muted); }
+    .badge-soon {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 6px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    footer {
+      border-top: 1px solid var(--divider);
+      margin-top: 72px;
+      padding: 32px 0 56px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 560px) {
+      .cards { grid-template-columns: 1fr; }
+      header { padding-top: 52px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img class="banner" src="assets/banners/banner.png" alt="Open OCPP Trace — an open, vendor-neutral format for OCPP traces">
+      <p class="tagline">
+        Exchange, store, and analyze OCPP traces in one shared format — so different
+        tools can work with the same data without being tied to any single implementation.
+      </p>
+      <div class="status">Status: <b>Early design phase</b> — not yet stable, subject to breaking changes.</div>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://github.com/open-ocpp-trace/specification">Read the specification</a>
+        <a class="btn btn-ghost" href="https://github.com/open-ocpp-trace">GitHub organization</a>
+      </div>
+    </header>
+
+    <hr class="rule">
+
+    <section>
+      <h2>Why this project exists</h2>
+      <p>
+        OCPP traces are produced and consumed by many tools — charge point simulators,
+        CSMS test suites, diagnostic utilities, and log analyzers — but each tool
+        captures traces in its own format. This fragmentation makes it hard to move
+        data between tools, reproduce issues across environments, or build shared
+        analysis and conformance tooling.
+      </p>
+      <p class="muted">
+        Open OCPP Trace addresses this by providing a single interchange format that
+        any tool can read and write.
+      </p>
+    </section>
+
+    <section>
+      <h2>Goals</h2>
+      <ul class="clean">
+        <li><b>Stable, versioned format</b> — a well-defined format for OCPP traces.</li>
+        <li><b>Vendor neutrality</b> — independent of any vendor or implementation.</li>
+        <li><b>Interoperability</b> — traces flow between independent OCPP tools.</li>
+        <li><b>Automatic validation</b> — schemas let traces be validated by machines.</li>
+        <li><b>Conformance</b> — implementations can be tested against the specification.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Scope</h2>
+      <p class="muted">This organization maintains the specification and its supporting material. Tool implementations remain in their own repositories.</p>
+      <div class="cards">
+        <div class="card">
+          <h3><a href="https://github.com/open-ocpp-trace/specification">Specification</a></h3>
+          <p>The format definition and semantics.</p>
+        </div>
+        <div class="card soon">
+          <h3>Schemas <span class="badge-soon">soon</span></h3>
+          <p>Machine-readable schemas for validation.</p>
+        </div>
+        <div class="card soon">
+          <h3>Examples <span class="badge-soon">soon</span></h3>
+          <p>Reference traces demonstrating the format.</p>
+        </div>
+        <div class="card soon">
+          <h3>Conformance tests <span class="badge-soon">soon</span></h3>
+          <p>Checks that verify format compliance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contributing</h2>
+      <p>
+        The specification is being designed in the open, and feedback is welcome. If
+        you build or maintain OCPP tooling, your input on the format and its
+        requirements is especially valuable.
+        <a href="https://github.com/open-ocpp-trace/specification/issues">Open an issue</a>
+        to discuss use cases, propose changes, or report gaps.
+      </p>
+    </section>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      Open OCPP Trace · designed in the open ·
+      <a href="https://github.com/open-ocpp-trace">github.com/open-ocpp-trace</a>
+    </div>
+  </footer>
+</body>
+</html>

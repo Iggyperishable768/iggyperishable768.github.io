@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Open OCPP Trace avatar">
+  <rect width="512" height="512" rx="96" fill="#0d1117"></rect>
+  <g transform="translate(126 126) scale(2.1667)" fill="none" stroke="#33b1d4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M46 24 H26 V96 H46"></path>
+    <path d="M74 24 H94 V96 H74"></path>
+    <path d="M34 60 H48 L54 42 L60 78 L66 60 H86" stroke-width="8"></path>
+  </g>
+</svg>

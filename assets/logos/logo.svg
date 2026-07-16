@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="220" viewBox="0 0 760 220" role="img" aria-label="Open OCPP Trace">
+  <rect width="760" height="220" fill="#ffffff"></rect>
+  <g transform="translate(52 50) scale(1.0)" fill="none" stroke="#33b1d4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M46 24 H26 V96 H46"></path>
+    <path d="M74 24 H94 V96 H74"></path>
+    <path d="M34 60 H48 L54 42 L60 78 L66 60 H86" stroke-width="8"></path>
+  </g>
+  <text x="210" y="108" font-family="&#39;Space Grotesk&#39;, system-ui, sans-serif" font-size="52" font-weight="500" fill="#1f2328" letter-spacing="-0.5">Open <tspan font-family="&#39;JetBrains Mono&#39;, monospace" font-weight="700" fill="#1f7d97">OCPP</tspan> Trace</text>
+  <text x="212" y="150" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="22" fill="#8b949e" letter-spacing="0.5">open-ocpp-trace</text>
+</svg>
